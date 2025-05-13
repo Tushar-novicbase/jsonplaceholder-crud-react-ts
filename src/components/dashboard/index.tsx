@@ -134,8 +134,8 @@ const DashboardContainer = () => {
   };
 
   // Filter posts based on search term
-  const filteredPosts = posts.filter((post) => 
-    post.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+  const filteredPosts = posts.filter((post) =>
+    post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
     post.body.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
@@ -228,16 +228,16 @@ const DashboardContainer = () => {
       <div className="table-container">
         {/* Search container */}
         <div className="search-container" style={{ display: "flex", justifyContent: "center", alignItems: "center", marginBlock: "20px" }}>
-          <input 
-            type="text" 
-            placeholder="Search by title or body..." 
-            value={searchTerm} 
-            onChange={handleSearchChange} 
-            className="search-input" 
+          <input
+            type="text"
+            placeholder="Search by title or body..."
+            value={searchTerm}
+            onChange={handleSearchChange}
+            className="search-input"
           />
-          <button 
-            className="search-button" 
-            onClick={handleClearSearch} 
+          <button
+            className="search-button"
+            onClick={handleClearSearch}
             disabled={!searchTerm}
           >
             Clear
@@ -271,9 +271,9 @@ const DashboardContainer = () => {
         </table>
 
         {/* Pagination */}
-        <div className="pagination-container" style={{display: "flex", justifyContent: "space-between", alignItems: "center", marginBlock: "20px"}}>
+        <div className="pagination-container" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBlock: "20px" }}>
           <div className="items-per-page">
-            <label htmlFor="itemsPerPage" style={{fontSize: "20px", color: "#fff"}}>Items per page:</label>
+            <label htmlFor="itemsPerPage" style={{ fontSize: "20px", color: "#fff" }}>Items per page:</label>
             <select
               id="itemsPerPage"
               value={itemsPerPage}

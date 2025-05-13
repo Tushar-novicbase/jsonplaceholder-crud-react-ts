@@ -34,16 +34,19 @@ const LoginContainer = () => {
   const { register, handleSubmit, formState: { errors, isSubmitting }} = useForm<LoginFormData>({
     resolver: yupResolver(schema),
     defaultValues: {
-      email: 'john@mail.com',
+      email: 'test@mail.com',
       password: 'changeme',
     },
+    
   });
 
   const onSubmit = async (data: LoginFormData) => {
-    if(data){
+    if(data.email === 'test@mail.com' && data.password === 'changeme') {
         const access_token = new Date().getTime();
         setLocalStorage('access_token', access_token.toString());
         navigate(from, { replace: true });
+    }else{
+        alert('Invalid email or password');
     }
   };
 
